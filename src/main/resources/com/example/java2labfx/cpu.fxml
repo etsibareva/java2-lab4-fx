@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="705.0" prefWidth="811.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.java2labfx.cpuController">
+   <left>
+      <ScrollPane prefHeight="537.0" prefWidth="485.0" BorderPane.alignment="CENTER">
+         <content>
+            <GridPane fx:id="allView" minHeight="70.0" prefHeight="70.0" prefWidth="489.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </content>
+      </ScrollPane>
+   </left>
+   <top>
+      <Pane prefHeight="168.0" prefWidth="811.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="447.0" layoutY="17.0" prefHeight="127.0" prefWidth="358.0" style="-fx-border-color: grey;">
+               <children>
+                  <TextField fx:id="instructName" layoutX="125.0" layoutY="19.0" prefHeight="25.0" prefWidth="70.0" text="init" />
+                  <TextField fx:id="arg1" layoutX="124.0" layoutY="56.0" prefHeight="25.0" prefWidth="70.0" text="10" />
+                  <TextField fx:id="arg2" layoutX="125.0" layoutY="91.0" prefHeight="25.0" prefWidth="70.0" text="20" />
+                  <Label layoutX="13.0" layoutY="18.0" prefHeight="27.0" prefWidth="122.0" text="Инструкция">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="60.0" text="аргумент 1" />
+                  <Label layoutX="14.0" layoutY="95.0" text="аргумент 2" />
+                  <Button layoutX="226.0" layoutY="44.0" mnemonicParsing="false" onAction="#addInstruction" prefHeight="50.0" prefWidth="105.0" text="Добавить">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Button layoutX="20.0" layoutY="17.0" mnemonicParsing="false" onAction="#reloadProg" prefHeight="52.0" prefWidth="166.0" text="Перезагрузка">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="197.0" layoutY="17.0" mnemonicParsing="false" onAction="#runStep" prefHeight="52.0" prefWidth="166.0" text="Выполнить шаг">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="197.0" layoutY="84.0" mnemonicParsing="false" onAction="#resetProg" prefHeight="52.0" prefWidth="166.0" text="Сбросить">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </top>
+   <right>
+      <Pane prefHeight="320.0" prefWidth="316.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="1.0" prefHeight="93.0" prefWidth="310.0" style="-fx-border-color: grey;">
+               <children>
+                  <Label alignment="TOP_CENTER" layoutX="28.0" layoutY="14.0" prefHeight="27.0" prefWidth="24.0" text="A">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutX="103.0" layoutY="14.0" prefHeight="27.0" prefWidth="24.0" text="B">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutX="179.0" layoutY="14.0" prefHeight="27.0" prefWidth="24.0" text="C">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutX="250.0" layoutY="14.0" prefHeight="27.0" prefWidth="24.0" text="D">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Reg1" layoutX="19.0" layoutY="47.0" text="Label">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Reg2" layoutX="94.0" layoutY="47.0" text="Label">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Reg3" layoutX="170.0" layoutY="47.0" text="Label">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Reg4" layoutX="241.0" layoutY="47.0" text="Label">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="1.0" layoutY="320.0" prefHeight="213.0" prefWidth="310.0" style="-fx-border-color: grey;">
+               <children>
+                  <GridPane fx:id="allStatistic" layoutX="4.0" prefHeight="41.0" prefWidth="303.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+               </children></Pane>
+            <Pane layoutX="1.0" layoutY="99.0" prefHeight="215.0" prefWidth="309.0" style="-fx-border-color: grey;">
+               <children>
+                  <ScrollPane layoutX="6.0" layoutY="5.0" prefHeight="203.0" prefWidth="297.0">
+                     <content>
+                        <GridPane fx:id="allRam" prefHeight="30.0" prefWidth="304.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+               </children></Pane>
+         </children>
+      </Pane>
+   </right>
+   <center>
+      <Pane prefHeight="436.0" prefWidth="169.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
